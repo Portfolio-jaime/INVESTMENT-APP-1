@@ -10,12 +10,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build backend
-      run: cd backend && npm install && npm run build
+      run: cd backend && npm install
     - name: Build frontend
       run: cd frontend && npm install && npm run build
     - name: Build and push Docker images
       run: |
-        docker build -t trii/backend:latest backend
-        docker build -t trii/frontend:latest frontend
-        docker push trii/backend:latest
-        docker push trii/frontend:latest
+        docker build -t jaimehenao8126/trii-backend:latest backend
+        docker build -t jaimehenao8126/trii-frontend:latest frontend
+        docker push jaimehenao8126/trii-backend:latest
+        docker push jaimehenao8126/trii-frontend:latest
