@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: trii
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/your-repo/trii
+    path: k8s/overlays/local
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: trii
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
