@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: trii/frontend:latest
+        image: jaimehenao8126/trii-frontend:latest
         ports:
         - containerPort: 3000
         env:
